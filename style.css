@@ -1,0 +1,228 @@
+:root{
+    --grey:#a386be;
+    --hoverGrey:#eeeeee;
+    --text:#6c4e88;
+    --background:#FCBAAD;
+    --lightBackground:#FDE5EC;
+    --contrastBackground:#E48586;
+    --blackText:#000000;
+    --whiteText:#ffffff;
+    --svgColor:invert(34%) sepia(11%) saturate(2262%) hue-rotate(228deg) brightness(92%) contrast(85%);/* from https://codepen.io/sosuke/pen/Pjoqqp */
+
+}
+
+*{
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+/* background */
+.container{
+    width: 100%;
+    min-height: 100svh;
+    background: rgb(253,229,236);
+    background: -moz-linear-gradient(143deg, rgba(253,229,236,1) 0%, rgba(252,186,173,1) 70%);
+    background: -webkit-linear-gradient(143deg, rgba(253,229,236,1) 0%, rgba(252,186,173,1) 70%);
+    background: linear-gradient(143deg, rgba(253,229,236,1) 0%, rgba(252,186,173,1) 70%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fde5ec",endColorstr="#fcbaad",GradientType=1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*main box*/
+.box{
+    padding: 10px;
+}
+
+.todo{
+    width: 100%;
+    max-width: 540px;
+    background: white;
+    box-shadow: var(--contrastBackground) 5px 5px 20px;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo h2{
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* icon */
+#icon{
+    filter: var(--svgColor);
+    height: 32px;
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+/*input*/
+.addToDo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--lightBackground);
+    border-radius: 30px 30px 30px 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    color: var(--text);
+}
+
+/*add button*/
+button{
+    border: none;
+    outline: none;
+    padding: 16px 30px;
+    background:var(--contrastBackground);
+    color: var(--whiteText);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 0px 40px 40px 0px;
+}
+
+/* list */
+ul li{
+    color: var(--text);
+    list-style: none;
+    font-size: 17px;
+    padding: 16px 45px 16px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li:hover{
+    background-color: var(--hoverGrey);
+    border-radius: 13px;
+}
+
+/* list check uncheck icon */
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    background-image:url(image/unchecked.svg);
+    background-size: cover;
+    background-position: center;
+    top: 10px;
+    left: 10px;
+}
+
+ul li.checked{
+    color: var(--grey);
+    text-decoration: line-through;
+
+}
+
+ul li.checked::before{
+    background-image:url(image/checked.svg);
+    background-size: cover;
+    background-position: center;
+
+}
+
+/*cross button */
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40x;
+    font-size: 35px;
+    line-height: 40px;
+    text-align: center;
+    color: var(--grey);
+    border-radius: 20%;
+}
+
+ul li span:hover{
+    color: var(--blackText);
+}
+/*footer*/
+
+footer{
+    background-color: var(--contrastBackground);
+    text-align: center;
+    justify-content: end;
+    margin-bottom: 0px;
+    padding: 5px;
+    color: var(--text);
+}
+
+.footerLink{
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--text);
+    
+}
+
+
+/*media query*/
+
+@media(max-width:383px){
+    .todo{
+        background-color: red;
+        margin: 100px auto 20px;
+    }
+
+    .todo h2{
+        justify-content: center  
+    }
+
+    .addToDo{
+        display: flex;
+        background-color: var(--lightBackground);
+        border-radius: 30px 30px 30px 30px;
+        padding-left: 20px;
+        margin-bottom: 50px;
+        position: relative;
+    }
+
+    input{
+        flex: 1;
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 10px;
+        color: var(--text);
+        
+    }
+
+    button{
+        border: none; 
+        outline: none;
+        background:var(--contrastBackground);
+        color: var(--whiteText);
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        border-radius: 30px 30px 30px 30px;
+        height: 35px;
+        width: 100%;
+        margin-top: 10px;
+        position: absolute;
+        top: 35px;
+        left: 0;
+        vertical-align: middle;
+        
+    }
+
+}
