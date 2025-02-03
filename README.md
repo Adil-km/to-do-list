@@ -1,6 +1,7 @@
 <h1>📝 To-Do List using JavaScript</h1>
 <p>A simple To-Do List built with <strong>HTML, CSS, and JavaScript</strong></p>
-<a href="https://to-do-list-demo.pages.dev/">Visit site</a>
+<p>👉 <a href="https://to-do-list-demo.pages.dev/">Vist site</a></p>
+
 <h2>📌 Purpose of the Project</h2>
 <ul>
   <li>✅ Learn how to use Local Storage to save and retrieve data</li>
